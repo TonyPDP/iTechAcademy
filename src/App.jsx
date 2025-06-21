@@ -1,7 +1,13 @@
+import Sidebar from "./pages/Sidebar/Sidebar"
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold">Hello World</h1>
+      <Sidebar />
+      {/* <Dashboard /> */}
+      {/* <Group /> */}
+      {/* <Student /> */}
+      {/* Add other components as needed */}
     </div>
   )
 }
