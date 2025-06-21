@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+:root {
+  /* Primary colors */
+  --primary-blue: #001f54;
+  --primary-sky: #87ceeb;
+  --primary-green: #50cb78;
+  --primary-mint: #22bb22;
+  --primary-purple: #6a0dad;
+  --primary-lavender: #e6e6fa;
+
+  /* Secondary colors */
+  --secondary-gold: #daa520;
+  --secondary-neon: #ffff4f;
+  --secondary-pink: #ff7f50;
+  --secondary-orange: #f28500;
+  --secondary-grey: #a9a9a9;
+  --secondary-dark: #36454f;
+
+  /* Accent colors */
+  --accent-coral: #ff6347;
+  --accent-magenta: #40e0dd;
+  --accent-cyan: #00ffff;
+  --accent-lime: #40e0dd;
+}

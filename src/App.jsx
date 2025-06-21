@@ -4,10 +4,7 @@ const App = () => {
   return (
     <div>
       <Sidebar />
-      {/* <Dashboard /> */}
-      {/* <Group /> */}
-      {/* <Student /> */}
-      {/* Add other components as needed */}
+      
     </div>
   )
 }
