@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Groups from "./pages/Group/Group";
 import Employees from "./pages/Employee/Employee";
 import Student from "./pages/Student/Student";
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { ConfigProvider, message } from 'antd';
 import AuthLayout from './pages/auth/Layout/Layout';
@@ -53,6 +54,24 @@ const App = () => {
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading...</p>
         </div>
+=======
+import EachStudent from "./pages/Student/EachStudent";
+
+const App = () => {
+  return (
+    <Router>
+      <div className="flex">
+        <Sidebar />
+        <main className="flex-grow p-4">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/students" element={<Student />} />
+            <Route path="/employees" element={<Employees />} />
+            <Route path="/student/:id" element={<EachStudent />} />
+            {/* Add other routes as needed */}
+          </Routes>
+        </main>
+>>>>>>> db489530e1e58e68cbda8d8f89dc8d2cf62c97ce
       </div>
     );
   }

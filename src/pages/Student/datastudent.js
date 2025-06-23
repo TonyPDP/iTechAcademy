@@ -35,7 +35,7 @@ export const students = [
     avatar: "https://i.pravatar.cc/40?img=3",
   },
   {
-    id: 1,
+    id: 4,
     name: "Abdujabbor Ibrohimov",
     phone: "+998 94 412 70 70",
     course: "Frontend 05",
@@ -46,7 +46,7 @@ export const students = [
     avatar: "https://i.pravatar.cc/40?img=1",
   },
   {
-    id: 2,
+    id: 5,
     name: "Gulnora Rasulova",
     phone: "+998 94 412 90 65",
     course: "Frontend 05",
@@ -57,7 +57,7 @@ export const students = [
     avatar: "https://i.pravatar.cc/40?img=2",
   },
   {
-    id: 3,
+    id: 6,
     name: "Nodirbek Yuldashev",
     phone: "+998 94 59 67 54",
     course: "Foundation 02",

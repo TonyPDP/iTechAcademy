@@ -1,13 +1,16 @@
 import React from "react";
-import { IoIosLogIn } from "react-icons/io";
-import { GoPlus } from "react-icons/go";
-import search from "../../../public/search.png";
-import Allstudents from "./Allstudents";
 import Navbar from "../Navbar/Navbar";
+// import { useParams } from "react-router-dom";
+import { students } from "./datastudent";
 
-const Student = () => {
+const EachStudent = ({ id }) => {
+  //   const { id } = useParams();
+  console.log(id);
+  const student = students;
+
+  if (!student) return <div>Student topilmadi</div>;
   return (
-    <div className="pr-[30px] pl-[21px] py-[32px]">
+    <div>
       <Navbar />
       <div className="flex items-center justify-between mt-[32px]">
         <div>
@@ -34,32 +37,19 @@ const Student = () => {
           </button>
         </div>
       </div>
-      <div className="flex my-[32px] gap-[14px]">
-        <div className="relative  flex items-center justify-center">
-          <input
-            type="search"
-            placeholder="Search by name, course, or mobile"
-            className=" w-[114vh] border border-gr ay-300 text-[20px] rounded-md py-[10.5px] pl-8  bg-[#EDEDED]"
-          />
-          <img
-            src={search}
-            alt="Search Icon"
-            className="w-5 h-5 absolute left-2 top-1/2 transform -translate-y-1/2 pointer-events-none"
-          />
-        </div>
-        <div className="flex gap-[14px]">
-          <button className="flex   border border-gray-300 rounded-md p-1  text-[20px] font-semibold px-[19px] py-[9.5px] gap-[11px] bg-[#EDEDED]">
-            <span>a</span>
-            Filter
-          </button>
-          <button className=" w-[12vh] border border-gr ay-300 rounded-md p-1 font-semibold px-[19px] py-[9.5px]     bg-[#EDEDED]">
-            Date
-          </button>
+      <div>
+        <div className="p-6">
+          <div key={student.id}>
+            <h2 className="text-2xl font-bold">{student.name}</h2>
+            <p>Telefon: {student.phone}</p>
+            <p>Kurs: {student.course}</p>
+            <p>To‘lov: {student.price}</p>
+            <p>Status: {student.status}</p>
+          </div>
         </div>
       </div>
-      <Allstudents />
     </div>
   );
 };
 
-export default Student;
+export default EachStudent;
