@@ -69,7 +69,7 @@ const App = () => {
             <Route path="/students/addstudent" element={<AddStudent />} />
             <Route path="/addstudent" element={<AddStudent />} />
             <Route path="/employees" element={<Employees />} />
-            <Route path="/student/:id" element={<EachStudent />} />
+            <Route path="/students/:id" element={<EachStudent />} />
             {/* Add other routes as needed */}
           </Routes>
         </main>
