@@ -7,7 +7,7 @@ import DropdownMenu from "./DropdownMenu";
 const NavbarMain = () => {
   return (
     <div className="flex items-center">
-      <div className="flex items-center ml-4 justify-between w-full">
+      <div className="flex items-center justify-between w-full">
         <div className="relative w-[300px]">
           <input
             type="search"

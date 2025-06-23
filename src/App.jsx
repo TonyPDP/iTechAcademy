@@ -5,6 +5,7 @@ import Employees from "./pages/Employee/Employee";
 import Student from "./pages/Student/Student";
 import EachStudent from "./pages/Student/EachStudent";
 import AddStudent from "./pages/Student/AddStudent";
+import Groups from "./pages/Groups/Groups";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/students" element={<Student />} />
+            <Route path="/groups" element={<Groups />} />
             <Route path="/students/addstudent" element={<AddStudent />} />
             <Route path="/addstudent" element={<AddStudent />} />
             <Route path="/employees" element={<Employees />} />
