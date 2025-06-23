@@ -3,8 +3,8 @@ import { IoIosLogIn } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
 import search from "../../../public/search.png";
 import Allstudents from "./Allstudents";
-import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
+import NavbarMain from "../Navbar/NavbarMain";
 
 const Student = () => {
   const navigate = useNavigate();
@@ -13,9 +13,9 @@ const Student = () => {
     navigate("/students/addstudent");
   };
   return (
-    <div className="pr-[30px] pl-[21px] py-[32px]">
-      <Navbar />
-      <div className="flex items-center justify-between mt-[32px]">
+    <div className="pr-[30px] pl-[21px]">
+      <NavbarMain/>
+      <div className="flex items-center justify-between mt-[22px]">
         <div>
           <p className="text-[20px] font-medium text-[#00000099] flex flex-col">
             <span className="text-[28px] font-semibold text-[#000000]">
@@ -36,7 +36,7 @@ const Student = () => {
             onClick={handleClick}
           >
             <GoPlus className="text-white w-[20px] h-[20px]" />
-            <span className="text-[#ffff] text-[20px] font-semibold">
+            <span className="text-[#ffff] text-[20px] font-semibold cursor-pointer">
               {" "}
               Add Student
             </span>
