@@ -1,14 +1,7 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import NavbarMain from '../Navbar/NavbarMain'
+import React from "react";
 
 const AddStudent = () => {
-  return (
-    <div>
-      
-      <NavbarMain />
-    </div>
-  )
-}
+  return <div>AddStudent</div>;
+};
 
-export default AddStudent
+export default AddStudent;
