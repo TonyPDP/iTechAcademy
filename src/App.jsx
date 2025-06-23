@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Groups from "./pages/Group/Group";
 import Employees from "./pages/Employee/Employee";
 import Student from "./pages/Student/Student";
+import EachStudent from "./pages/Student/EachStudent";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/" element={<Dashboard />} />
             <Route path="/students" element={<Student />} />
             <Route path="/employees" element={<Employees />} />
+            <Route path="/student/:id" element={<EachStudent />} />
             {/* Add other routes as needed */}
           </Routes>
         </main>
