@@ -17,7 +17,7 @@ const Navbar = () => {
           <input
             type="search"
             placeholder="Search..."
-            className="border border-gray-300 rounded-md p-1 pl-8 bg-[#EDEDED]"
+            className="border border-gray-300 rounded-md p-1 pl-8 w-[280px] bg-[#EDEDED]"
           />
           <img
             src={search}

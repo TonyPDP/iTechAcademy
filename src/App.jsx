@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./pages/Sidebar/Sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Groups from "./pages/Group/Group";
 import Employees from "./pages/Employee/Employee";
 import Student from "./pages/Student/Student";
 import EachStudent from "./pages/Student/EachStudent";
+import AddStudent from "./pages/Student/AddStudent";
 
 const App = () => {
-  return (
+  return (  
     <Router>
       <div className="flex">
         <Sidebar />
@@ -15,6 +15,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/students" element={<Student />} />
+            <Route path="/students/addstudent" element={<AddStudent />} />
+            <Route path="/addstudent" element={<AddStudent />} />
             <Route path="/employees" element={<Employees />} />
             <Route path="/student/:id" element={<EachStudent />} />
             {/* Add other routes as needed */}

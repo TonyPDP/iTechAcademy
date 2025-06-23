@@ -4,8 +4,14 @@ import { GoPlus } from "react-icons/go";
 import search from "../../../public/search.png";
 import Allstudents from "./Allstudents";
 import Navbar from "../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Student = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/students/addstudent");
+  };
   return (
     <div className="pr-[30px] pl-[21px] py-[32px]">
       <Navbar />
@@ -25,7 +31,10 @@ const Student = () => {
               Export
             </span>
           </button>
-          <button className="flex gap-[4px] items-center justify-center px-[15px] py-[10px] bg-[#0D4715] border border-[#0D4715] rounded-[5px]">
+          <button
+            className="flex gap-[4px] items-center justify-center px-[15px] py-[10px] bg-[#0D4715] border border-[#0D4715] rounded-[5px]"
+            onClick={handleClick}
+          >
             <GoPlus className="text-white w-[20px] h-[20px]" />
             <span className="text-[#ffff] text-[20px] font-semibold">
               {" "}

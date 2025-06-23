@@ -24,35 +24,35 @@ const Sidebar = () => {
       </div>
 
       {/* Menu Items */}
-      <nav>
-        <ul>
-          {menuItems.map((item, index) => {
-            const Icon = item.icon;
-            const isActive = location.pathname === item.path;
+      {menuItems.map((item, index) => {
+        const Icon = item.icon;
 
-            return (
-              <Link to={item.path} key={index}>
-                <li
-                  className={`flex items-center gap-2 py-2 px-6 rounded-md cursor-pointer transition-colors 
-                    ${
-                      isActive
-                        ? "bg-[#0D4715] text-white font-semibold"
-                        : "hover:bg-primary-green text-gray-700"
-                    }
-                  `}
-                >
-                  <Icon
-                    className={`text-[18px] ${
-                      isActive ? "text-white" : "text-gray-500"
-                    }`}
-                  />
-                  <span>{item.label}</span>
-                </li>
-              </Link>
-            );
-          })}
-        </ul>
-      </nav>
+        const isActive =
+          item.path === "/"
+            ? location.pathname === "/"
+            : location.pathname.startsWith(item.path);
+
+        return (
+          <Link to={item.path} key={index}>
+            <li
+              className={`flex items-center gap-2 py-2 px-6 rounded-md cursor-pointer transition-colors 
+          ${
+            isActive
+              ? "bg-[#0D4715] text-white font-semibold"
+              : "hover:bg-primary-green text-gray-700"
+          }
+        `}
+            >
+              <Icon
+                className={`text-[18px] ${
+                  isActive ? "text-white" : "text-gray-500"
+                }`}
+              />
+              <span>{item.label}</span>
+            </li>
+          </Link>
+        );
+      })}
     </aside>
   );
 };
