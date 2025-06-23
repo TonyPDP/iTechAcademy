@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
+import NavbarMain from '../Navbar/NavbarMain'
 
 const AddStudent = () => {
   return (
     <div>
-      <Navbar />
       
+      <NavbarMain />
     </div>
   )
 }
