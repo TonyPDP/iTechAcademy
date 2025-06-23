@@ -2,10 +2,9 @@ import logo from "../../../public/logo.svg";
 import { HomeOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 
-
 const menuItems = [
   { icon: HomeOutlined, label: "Dashboard", path: "/" },
-  { icon: UserOutlined, label: "Groups", path: "/groups" },
+  { icon: UserOutlined, label: "Students", path: "/students" },
   { icon: UserOutlined, label: "Employees", path: "/employees" },
   { icon: UserOutlined, label: "Finance", path: "/finance" },
   { icon: UserOutlined, label: "Permissions", path: "/permissions" },
@@ -13,7 +12,6 @@ const menuItems = [
   { icon: SettingOutlined, label: "Support", path: "/support" },
   { icon: SettingOutlined, label: "Logout", path: "/logout" },
 ];
-
 
 const Sidebar = () => {
   const location = useLocation();
@@ -36,9 +34,11 @@ const Sidebar = () => {
               <Link to={item.path} key={index}>
                 <li
                   className={`flex items-center gap-2 py-2 px-6 rounded-md cursor-pointer transition-colors 
-                    ${isActive
-                      ? "bg-[#0D4715] text-white font-semibold"
-                      : "hover:bg-primary-green text-gray-700"}
+                    ${
+                      isActive
+                        ? "bg-[#0D4715] text-white font-semibold"
+                        : "hover:bg-primary-green text-gray-700"
+                    }
                   `}
                 >
                   <Icon
@@ -56,4 +56,4 @@ const Sidebar = () => {
     </aside>
   );
 };
-export default Sidebar; 
+export default Sidebar;
