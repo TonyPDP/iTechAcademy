@@ -1,108 +1,16 @@
-// import React from "react";
-// import { students } from "./datastudent";
-
-// const Allstudents = () => {
-//   const badgeColor = {
-//     Settled: "bg-green-100 text-green-700",
-//     Failed: "bg-red-100 text-red-700",
-//     Pending: "bg-yellow-100 text-yellow-700",
-//   };
-//   return (
-//     <div>
-//       <div>
-//         <table className="w-full  ">
-//           <thead className="text-left">
-//             <tr className="">
-//               <th className="text-[20px] font-semibold">Name</th>
-//               <th className="text-[20px] font-semibold">Course</th>
-//               <th className="text-[20px] font-semibold">Price</th>
-//               <th className="text-[20px] font-semibold">Payment Methods</th>
-//               <th className="text-[20px] font-semibold">Status</th>
-//               <th className="text-[20px] font-semibold">Actions</th>
-//             </tr>
-//           </thead>
-//           <tbody className="">
-//             {students.map((student) => (
-//               <tr key={student.id} className="!pb-[30px]">
-//                 <td className="flex items-center gap-[12px]">
-//                   <img
-//                     src={student.avatar}
-//                     alt={student.name}
-//                     className="w-[40px] h-[40px] rounded-full"
-//                   />
-//                   <div>
-//                     <div className="text-[18px] font-medium">
-//                       {student.name}
-//                     </div>
-//                     <div className="text-gray-500 text-[16px] font-medium">
-//                       {student.phone}
-//                     </div>
-//                   </div>
-//                 </td>
-//                 <td className="text-[20px] font-medium">{student.course}</td>
-//                 <td className="text-[20px] font-medium text-[#00000099]">
-//                   {student.price}
-//                 </td>
-//                 <td className="text-[20px] font-medium">{student.pay}</td>
-//                 <td className="">
-//                   <button
-//                     disabled
-//                     // className=" flex px-[15.5px] py-[9px] text-[16px] items-center justify-center "
-//                     className={` w-[91px] flex items-center justify-center px-[15.5px] py-[9px] rounded-[5px] text-[16px] font-bold ${
-//                       badgeColor[student.status]
-//                     }`}
-//                   >
-//                     {student.status}
-//                   </button>
-//                   {/* <span
-//                     className={`px-[15.5px] py-[9px] rounded-[5px] text-[16px] font-bold ${
-//                       badgeColor[student.status]
-//                     }`}
-//                   >
-//                     {student.status}
-//                   </span> */}
-//                 </td>
-//                 <td className="">
-//                   <div className="flex gap-[9px] items-center ">
-//                     <select className="border  rounded text-[16px] px-[15.5px] py-[9px] ">
-//                       <option className="text-[16px] font-medium ">
-//                         Select
-//                       </option>
-//                       <option
-//                       // className="text-[16px] font-medium"
-//                       >
-//                         View
-//                       </option>
-//                       <option
-//                       // className="text-[16px] font-medium "
-//                       >
-//                         Edit
-//                       </option>
-//                       <option
-//                       // className="text-[16px] font-medium "
-//                       >
-//                         Delete
-//                       </option>
-//                     </select>
-//                     <button className="bg-green-700 text-white texx-[16px] font-semibold  px-[7.5px]  py-[9px] rounded ">
-//                       Go
-//                     </button>
-//                   </div>
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Allstudents;
 import React from "react";
 import { students } from "./datastudent";
+import { useNavigate } from "react-router-dom";
+import EachStudent from "./EachStudent";
+// import EachStudent from "./EachStudent";
 
 const Allstudents = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate(`/students/${id}`);
+    <EachStudent id={id} />;
+  };
   const badgeColor = {
     Settled: "bg-green-100 text-green-700",
     Failed: "bg-red-100 text-red-700",
@@ -127,7 +35,11 @@ const Allstudents = () => {
           </thead>
           <tbody>
             {students.map((student) => (
-              <tr key={student.id} className=" align-middle">
+              <tr
+                key={student.id}
+                className="align-middle cursor-pointer"
+                onClick={() => handleClick(student.id)}
+              >
                 <td className="py-[18px] flex items-center gap-[12px]">
                   <img
                     src={student.avatar}
