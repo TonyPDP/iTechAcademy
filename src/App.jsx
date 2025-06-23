@@ -7,7 +7,7 @@ import EachStudent from "./pages/Student/EachStudent";
 import AddStudent from "./pages/Student/AddStudent";
 
 const App = () => {
-  return (  
+  return (
     <Router>
       <div className="flex">
         <Sidebar />
