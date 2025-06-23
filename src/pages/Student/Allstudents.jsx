@@ -8,8 +8,8 @@ const Allstudents = () => {
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    navigate(`/students/${id}`);
     <EachStudent id={id} />;
+    navigate(`/students/${id}`);
   };
   const badgeColor = {
     Settled: "bg-green-100 text-green-700",
