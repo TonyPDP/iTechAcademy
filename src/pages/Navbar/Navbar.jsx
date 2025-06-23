@@ -2,6 +2,7 @@ import { Select } from "antd";
 import search from "../../../public/search.png";
 import profile from "../../../public/profile.png";
 import { HomeOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
+import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   return (
@@ -26,15 +27,15 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4 ml-4">
           <span>
-            <HomeOutlined />
+            <DropdownMenu />
           </span>
           <span>
             <UserOutlined />
           </span>
           <select className="">
             <option value="1">English</option>
-            <option value="2">Russian 2</option>
-            <option value="3">Uzbek 3</option>
+            <option value="2">Russian</option>
+            <option value="3">Uzbek</option>
           </select>
           <img src={profile} alt="Profile Icon" className="w-[39x] h-[39px]" />
         </div>
