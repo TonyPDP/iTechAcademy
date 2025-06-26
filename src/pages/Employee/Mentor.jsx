@@ -34,7 +34,7 @@ const Mentor = () => {
             onClick={handleSave}
             className="font-semibold bg-gray-800 text-white px-8 py-3 rounded flex items-center gap-2"
           >
-            <LuSave /> Edit
+            <LuSave />Edit
           </button>
         </div>
       </div>
