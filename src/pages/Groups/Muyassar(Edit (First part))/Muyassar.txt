@@ -1,0 +1,2 @@
+Group inforamtion sizga
+Grup name , Course, Mentor ... untill start date
