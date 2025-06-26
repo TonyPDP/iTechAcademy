@@ -14,7 +14,7 @@ const Student = () => {
   };
   return (
     <div className="pr-[30px] pl-[21px]">
-      <NavbarMain/>
+      <NavbarMain />
       <div className="flex items-center justify-between mt-[22px]">
         <div>
           <p className="text-[20px] font-medium text-[#00000099] flex flex-col">
