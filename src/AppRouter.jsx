@@ -5,9 +5,11 @@ import { checkUser, handleLogin, handleLogout, handleSignup } from './utils/appL
 // Pages
 import Sidebar from './pages/Sidebar/Sidebar';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Groups from './pages/Group/Group';
+import Groups from './pages/Groups/Groups';
 import Employees from './pages/Employee/Employee';
 import Student from './pages/Student/Student';
+import EachStudent from './pages/Student/EachStudent';
+import AddStudent from './pages/Student/AddStudent';
 
 // Auth
 import AuthLayout from './pages/auth/Layout/Layout';
@@ -38,7 +40,7 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      {!user && (
+      {!user ? (
         <>
           <Route
             path="/login"
@@ -75,52 +77,54 @@ const AppRoutes = () => {
           />
           <Route path="*" element={<Navigate to="/login" />} />
         </>
-      )}
-
-      {user && (
+      ) : (
         <>
           <Route
             path="/"
             element={
-              <div className="flex">
-                <Sidebar />
-                <main className="flex-grow p-4">
-                  <Dashboard user={user} onLogout={() => handleLogout(setUser)} />
-                </main>
-              </div>
+              <LayoutWithSidebar>
+                <Dashboard user={user} onLogout={() => handleLogout(setUser)} />
+              </LayoutWithSidebar>
             }
           />
           <Route
             path="/students"
             element={
-              <div className="flex">
-                <Sidebar />
-                <main className="flex-grow p-4">
-                  <Student />
-                </main>
-              </div>
+              <LayoutWithSidebar>
+                <Student />
+              </LayoutWithSidebar>
+            }
+          />
+          <Route
+            path="/students/:id"
+            element={
+              <LayoutWithSidebar>
+                <EachStudent />
+              </LayoutWithSidebar>
+            }
+          />
+          <Route
+            path="/students/addstudent"
+            element={
+              <LayoutWithSidebar>
+                <AddStudent />
+              </LayoutWithSidebar>
             }
           />
           <Route
             path="/employees"
             element={
-              <div className="flex">
-                <Sidebar />
-                <main className="flex-grow p-4">
-                  <Employees />
-                </main>
-              </div>
+              <LayoutWithSidebar>
+                <Employees />
+              </LayoutWithSidebar>
             }
           />
           <Route
             path="/groups"
             element={
-              <div className="flex">
-                <Sidebar />
-                <main className="flex-grow p-4">
-                  <Groups />
-                </main>
-              </div>
+              <LayoutWithSidebar>
+                <Groups />
+              </LayoutWithSidebar>
             }
           />
           <Route path="*" element={<Navigate to="/" />} />
@@ -129,5 +133,12 @@ const AppRoutes = () => {
     </Routes>
   );
 };
+
+const LayoutWithSidebar = ({ children }) => (
+  <div className="flex">
+    <Sidebar />
+    <main className="flex-grow p-4">{children}</main>
+  </div>
+);
 
 export default AppRoutes;
