@@ -9,16 +9,17 @@ import AddStudent from "./pages/Student/AddStudent";
 import Groups from "./pages/Groups/Groups";
 import AppRoutes from "./AppRouter";
 import { antdTheme } from "./utils/theme";
+import { ConfigProvider } from "antd";
 
 const App = () => {
   return (
     <ConfigProvider theme={antdTheme}>
       <Router>
+        <AppRoutes />
         <div className="flex">
           <Sidebar />
           <main className="flex-grow p-4">
             <Routes>
-              <AppRoutes />
               <Route path="/" element={<Dashboard />} />
               <Route path="/students" element={<Student />} />
               <Route path="/groups" element={<Groups />} />
