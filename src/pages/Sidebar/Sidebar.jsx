@@ -1,0 +1,59 @@
+import logo from "../../../public/logo.svg";
+import { HomeOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
+import { Link, useLocation } from "react-router-dom";
+
+const menuItems = [
+  { icon: HomeOutlined, label: "Dashboard", path: "/" },
+  { icon: UserOutlined, label: "Students", path: "/students" },
+  { icon: UserOutlined, label: "Employees", path: "/employees" },
+  { icon: UserOutlined, label: "Finance", path: "/finance" },
+  { icon: UserOutlined, label: "Permissions", path: "/permissions" },
+  { icon: SettingOutlined, label: "Settings", path: "/settings" },
+  { icon: SettingOutlined, label: "Support", path: "/support" },
+  { icon: SettingOutlined, label: "Logout", path: "/logout" },
+];
+
+const Sidebar = () => {
+  const location = useLocation();
+
+  return (
+    <aside className="w-60 bg-white min-h-screen border-r border-gray-200">
+      {/* Logo Section */}
+      <div className="h-20 flex items-center justify-center px-6 mb-6">
+        <img src={logo} alt="Logo" className="w-[150px] h-[41px]" />
+      </div>
+
+      {/* Menu Items */}
+      <nav>
+        <ul>
+          {menuItems.map((item, index) => {
+            const Icon = item.icon;
+            const isActive = location.pathname === item.path;
+
+            return (
+              <Link to={item.path} key={index}>
+                <li
+                  className={`flex items-center gap-2 py-2 px-6 rounded-md cursor-pointer transition-colors 
+                    ${
+                      isActive
+                        ? "bg-[#0D4715] text-white font-semibold"
+                        : "hover:bg-primary-green text-gray-700"
+                    }
+                  `}
+                >
+                  <Icon
+                    className={`text-[18px] ${
+                      isActive ? "text-white" : "text-gray-500"
+                    }`}
+                  />
+                  <span>{item.label}</span>
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      </nav>
+    </aside>
+  );
+};
+export default Sidebar;
