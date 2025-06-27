@@ -74,7 +74,7 @@ const Allstudents = () => {
                     disabled
                     className={`w-[91px] flex items-center justify-center px-[15.5px] py-[9px] rounded-[5px] text-[16px] font-bold ${
                       badgeColor[student.status]
-                    }`}
+                   }`}
                   >
                     {student.status}
                   </button>
