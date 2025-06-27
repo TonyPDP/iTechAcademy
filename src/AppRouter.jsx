@@ -136,7 +136,7 @@ const AppRoutes = () => {
             }
           />
           <Route
-            path="/groups/attendace"
+            path="/groups/attendance"
             element={
               <LayoutWithSidebar>
                 <Attendance />
