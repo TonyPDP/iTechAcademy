@@ -1,21 +1,27 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { checkUser, handleLogin, handleLogout, handleSignup } from './utils/appLogic';
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {
+  checkUser,
+  handleLogin,
+  handleLogout,
+  handleSignup,
+} from "./utils/appLogic";
 
 // Pages
-import Sidebar from './pages/Sidebar/Sidebar';
-import Dashboard from './pages/Dashboard/Dashboard';
-import Groups from './pages/Groups/Groups';
-import Employees from './pages/Employee/Employee';
-import Student from './pages/Student/Student';
-import EachStudent from './pages/Student/EachStudent';
-import AddStudent from './pages/Student/AddStudent';
+import Sidebar from "./pages/Sidebar/Sidebar";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Groups from "./pages/Groups/Groups";
+import Employees from "./pages/Employee/Employee";
+import Student from "./pages/Student/Student";
+import EachStudent from "./pages/Student/EachStudent";
+import AddStudent from "./pages/Student/AddStudent";
 
 // Auth
-import AuthLayout from './pages/auth/Layout/Layout';
-import LoginForm from './pages/auth/Login/Login';
-import SignupForm from './pages/auth/SignUp/SignUp';
-import ForgotPasswordForm from './pages/auth/ForgotPassword/ForgotPassword';
+import AuthLayout from "./pages/auth/Layout/Layout";
+import LoginForm from "./pages/auth/Login/Login";
+import SignupForm from "./pages/auth/SignUp/SignUp";
+import ForgotPasswordForm from "./pages/auth/ForgotPassword/ForgotPassword";
+import StudentEdit from "./pages/Student/Allstudents";
 
 const AppRoutes = () => {
   const [user, setUser] = useState(null);
@@ -47,8 +53,10 @@ const AppRoutes = () => {
             element={
               <AuthLayout>
                 <LoginForm
-                  onSwitchToSignup={() => window.location.replace('/signup')}
-                  onSwitchToForgotPassword={() => window.location.replace('/forgot-password')}
+                  onSwitchToSignup={() => window.location.replace("/signup")}
+                  onSwitchToForgotPassword={() =>
+                    window.location.replace("/forgot-password")
+                  }
                   onLoginSuccess={(userData) => handleLogin(userData, setUser)}
                 />
               </AuthLayout>
@@ -59,7 +67,7 @@ const AppRoutes = () => {
             element={
               <AuthLayout>
                 <SignupForm
-                  onSwitchToLogin={() => window.location.replace('/login')}
+                  onSwitchToLogin={() => window.location.replace("/login")}
                   onSignupSuccess={handleSignup}
                 />
               </AuthLayout>
@@ -70,7 +78,7 @@ const AppRoutes = () => {
             element={
               <AuthLayout>
                 <ForgotPasswordForm
-                  onBackToLogin={() => window.location.replace('/login')}
+                  onBackToLogin={() => window.location.replace("/login")}
                 />
               </AuthLayout>
             }
@@ -124,6 +132,14 @@ const AppRoutes = () => {
             element={
               <LayoutWithSidebar>
                 <Groups />
+              </LayoutWithSidebar>
+            }
+          />
+          <Route
+            path="/students/StudentEdit/:studentId"
+            element={
+              <LayoutWithSidebar>
+                <StudentEdit />
               </LayoutWithSidebar>
             }
           />

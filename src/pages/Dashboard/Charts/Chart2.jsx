@@ -55,7 +55,7 @@ const Chart2 = () => {
                 fill={COLORS[index % COLORS.length]}
               />
             ))}
-          </Pie>    
+          </Pie>
         </PieChart>
       </ResponsiveContainer>
 
