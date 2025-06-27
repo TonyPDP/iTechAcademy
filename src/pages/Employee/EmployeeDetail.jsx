@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import EditModal from "./Edit";
 
 const Go = () => {
+  
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [editModalVisible, setEditModalVisible] = useState(false);

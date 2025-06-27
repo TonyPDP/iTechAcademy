@@ -19,6 +19,7 @@ const Allemployee = () => {
     <div className="p-4">
       <table className="w-full ">
         <thead className="text-left ">
+        
           <tr>
             <th className="text-[20px] font-semibold py-[14px]">Name</th>
             <th className="text-[20px] font-semibold py-[14px]">Course</th>
