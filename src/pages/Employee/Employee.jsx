@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+import React from 'react'
+
+const Employee = () => {
+  return (
+    <div>
+      <h1>Employee</h1>
+    </div>
+  )
+}
+
+export default Employee
+=======
 import React from "react";
 import { IoIosLogIn } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
@@ -97,3 +110,4 @@ const Employee = () => {
 }
 
 export default Employee;
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84

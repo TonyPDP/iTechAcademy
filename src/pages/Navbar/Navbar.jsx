@@ -1,9 +1,45 @@
+<<<<<<< HEAD
+import search from "../../../public/search.png";
+import profile from "../../../public/profile.png";
+import { UserOutlined } from "@ant-design/icons";
+import DropdownMenu from "./DropdownMenu";
+import { Dropdown, Space } from "antd";
+import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+
+const Navbar = () => {
+  const items = [
+    {
+      key: "1",
+      label: "English",
+    },
+    {
+      key: "2",
+      label: "Русский",
+    },
+    {
+      key: "3",
+      label: "O'zbekcha",
+    },
+    {
+      key: "4",
+      label: "Français",
+      disabled: true,
+    },
+  ];
+
+  const handleMenuClick = (e) => {
+    console.log("Selected language key:", e.key);
+    // You can add logic here to switch languages dynamically
+  };
+
+=======
 import { Select } from "antd";
 import search from "../../../public/search.png";
 import profile from "../../../public/profile.png";
 import { HomeOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
 
 const Navbar = () => {
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
   return (
     <div className="flex items-center justify-between">
       <div>
@@ -16,7 +52,11 @@ const Navbar = () => {
           <input
             type="search"
             placeholder="Search..."
+<<<<<<< HEAD
+            className="border border-gray-300 rounded-md p-1 pl-8 w-[280px] bg-[#EDEDED] focus:outline-none focus:border-[#22C55E] focus:border-2"
+=======
             className="border border-gray-300 rounded-md p-1 pl-8 bg-[#EDEDED]"
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
           />
           <img
             src={search}
@@ -26,6 +66,21 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4 ml-4">
           <span>
+<<<<<<< HEAD
+            <DropdownMenu />
+          </span>
+          <span className="mr-2">
+            <UserOutlined />
+          </span>
+          <Dropdown menu={{ items, onClick: handleMenuClick }}>
+            <a onClick={(e) => e.preventDefault()}>
+              <Space>
+                English
+                <DownOutlined />
+              </Space>
+            </a>
+          </Dropdown>
+=======
             <HomeOutlined />
           </span>
           <span>
@@ -36,6 +91,7 @@ const Navbar = () => {
             <option value="2">Russian 2</option>
             <option value="3">Uzbek 3</option>
           </select>
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
           <img src={profile} alt="Profile Icon" className="w-[39x] h-[39px]" />
         </div>
       </div>
