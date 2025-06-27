@@ -1,5 +1,6 @@
 import React from 'react'
 import Oqila from './Oqila(Group UI)/Oqila'
+import Muyassar from './Muyassar(Edit (First part))/muyass'
 
 
 const Groups = () => {
@@ -8,6 +9,7 @@ const Groups = () => {
       <h2>Groups</h2>
       <p>Manage student groups and their details.</p>
       <Oqila/>
+      <Muyassar/>
     </div>
   )
 }
