@@ -11,6 +11,7 @@ const SuccessModal = ({ onAddAgain }) => {
           <label className="block mb-1">Group Name*</label>
           <input className="w-full border px-4 py-2 rounded" defaultValue="Group A" />
         </div>
+        
         <div>
           <label className="block mb-1">Course*</label>
           <input className="w-full border px-4 py-2 rounded" defaultValue="Python 05" />

@@ -15,6 +15,7 @@ const Employee = () => {
         <div className="flex items-center ml-1 gap-165">
           <div className="relative w-[300px]">
             <input
+            
               type="search"
               placeholder="Search..."
               className="border border-gray-300 rounded-md p-1 pl-10 px-25 bg-[#EDEDED]"

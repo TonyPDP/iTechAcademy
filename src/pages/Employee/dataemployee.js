@@ -11,6 +11,7 @@ export const employees = [
         avatar: "https://i.pravatar.cc/40?img=1",
     },
     {
+        
         id: 2,
         name: "Gulnora Rasulova",
         gruop: "41",

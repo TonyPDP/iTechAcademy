@@ -10,6 +10,7 @@ const SuccessModal = ({ onClose, onAddAgain }) => {
         <p className="font-semibold text-gray-600 mb-6">
           The changes have been recorded and added to the system.
         </p>
+        
         <div className="flex justify-center gap-4">
           <button
             onClick={onAddAgain}
