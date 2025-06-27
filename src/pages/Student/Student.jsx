@@ -3,6 +3,7 @@ import { IoIosLogIn } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
 import search from "../../../public/search.png";
 import Allstudents from "./Allstudents";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import NavbarMain from "../Navbar/NavbarMain";
 
@@ -16,6 +17,15 @@ const Student = () => {
     <div className="pr-[30px] pl-[21px]">
       <NavbarMain />
       <div className="flex items-center justify-between mt-[22px]">
+=======
+import Navbar from "../Navbar/Navbar";
+
+const Student = () => {
+  return (
+    <div className="pr-[30px] pl-[21px] py-[32px]">
+      <Navbar />
+      <div className="flex items-center justify-between mt-[32px]">
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
         <div>
           <p className="text-[20px] font-medium text-[#00000099] flex flex-col">
             <span className="text-[28px] font-semibold text-[#000000]">
@@ -31,12 +41,18 @@ const Student = () => {
               Export
             </span>
           </button>
+<<<<<<< HEAD
           <button
             className="flex gap-[4px] items-center justify-center px-[15px] py-[10px] bg-[#0D4715] border border-[#0D4715] rounded-[5px]"
             onClick={handleClick}
           >
             <GoPlus className="text-white w-[20px] h-[20px]" />
             <span className="text-[#ffff] text-[20px] font-semibold cursor-pointer">
+=======
+          <button className="flex gap-[4px] items-center justify-center px-[15px] py-[10px] bg-[#0D4715] border border-[#0D4715] rounded-[5px]">
+            <GoPlus className="text-white w-[20px] h-[20px]" />
+            <span className="text-[#ffff] text-[20px] font-semibold">
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
               {" "}
               Add Student
             </span>
@@ -57,7 +73,11 @@ const Student = () => {
           />
         </div>
         <div className="flex gap-[14px]">
+<<<<<<< HEAD
           <button className="flex   border border-gray-300 rounded-md p-1  text-[20px] font-semibold px-[19px] py-[9.5px] gap-[11px] bg-[#EDEDED]">
+=======
+          <button className="flex  border border-gr ay-300 rounded-md p-1  text-[20px] font-semibold px-[19px] py-[9.5px] gap-[11px] bg-[#EDEDED]">
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
             <span>a</span>
             Filter
           </button>

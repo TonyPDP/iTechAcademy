@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Navbar from "../Navbar/Navbar";
 import activeStudents from "../../../public/activeStudents.png";
 import mentorImg from "../../../public/mentor.png";
@@ -82,3 +83,18 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+=======
+import Navbar from "../Navbar/Navbar"
+
+const Dashboard = () => {
+  return (
+    <div>
+      <div>
+        <Navbar />
+      </div>
+    </div>
+  )
+}
+
+export default Dashboard
+>>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
