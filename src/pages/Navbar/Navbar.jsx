@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import search from "../../../public/search.png";
 import profile from "../../../public/profile.png";
 import { HomeOutlined, UserOutlined } from "@ant-design/icons";
@@ -7,29 +7,31 @@ import { DownOutlined } from "@ant-design/icons";
 import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
+  const [username, setUsername] = useState("User");
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      try {
+        const parsedUser = JSON.parse(userData);
+        if (parsedUser?.name) {
+          setUsername(parsedUser.name);
+        }
+      } catch (err) {
+        console.error("Failed to parse user from localStorage", err);
+      }
+    }
+  }, []);
+
   const items = [
-    {
-      key: "1",
-      label: "English",
-    },
-    {
-      key: "2",
-      label: "Русский",
-    },
-    {
-      key: "3",
-      label: "O'zbekcha",
-    },
-    {
-      key: "4",
-      label: "Français",
-      disabled: true,
-    },
+    { key: "1", label: "English" },
+    { key: "2", label: "Русский" },
+    { key: "3", label: "O'zbekcha" },
+    { key: "4", label: "Français", disabled: true },
   ];
 
   const handleMenuClick = (e) => {
     console.log("Selected language key:", e.key);
-    // Tilni dinamik almashtirish funksiyasi shu yerda bo'lishi mumkin
   };
 
   return (
@@ -37,13 +39,12 @@ const Navbar = () => {
       {/* Welcome */}
       <div>
         <h1 className="font-montserrat font-semibold text-[32px] leading-[100%]">
-          Welcome back, Tony 👋
+          Welcome back, {username} 👋
         </h1>
       </div>
 
-      {/* Right Side: Search, Icons, Dropdown */}
+      {/* Right Side */}
       <div className="flex items-center ml-4">
-        {/* Search */}
         <div className="relative w-[300px]">
           <input
             type="search"
@@ -57,7 +58,6 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Icons & Dropdown */}
         <div className="flex items-center gap-4 ml-4">
           <span>
             <DropdownMenu />
