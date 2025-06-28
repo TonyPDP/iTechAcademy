@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+import React from "react";
 import search from "../../../public/search.png";
 import profile from "../../../public/profile.png";
-import { UserOutlined } from "@ant-design/icons";
-import DropdownMenu from "./DropdownMenu";
+import { HomeOutlined, UserOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
+import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   const items = [
@@ -29,34 +29,26 @@ const Navbar = () => {
 
   const handleMenuClick = (e) => {
     console.log("Selected language key:", e.key);
-    // You can add logic here to switch languages dynamically
+    // Tilni dinamik almashtirish funksiyasi shu yerda bo'lishi mumkin
   };
 
-=======
-import { Select } from "antd";
-import search from "../../../public/search.png";
-import profile from "../../../public/profile.png";
-import { HomeOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
-
-const Navbar = () => {
->>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
   return (
     <div className="flex items-center justify-between">
+      {/* Welcome */}
       <div>
-        <h1 className="font-montserrat font-semibold text-[32px] leading-[100%] tracking-[0%] align-middle s">
+        <h1 className="font-montserrat font-semibold text-[32px] leading-[100%]">
           Welcome back, Tony 👋
         </h1>
       </div>
-      <div className="flex items-center ml-4 justify-between ">
+
+      {/* Right Side: Search, Icons, Dropdown */}
+      <div className="flex items-center ml-4">
+        {/* Search */}
         <div className="relative w-[300px]">
           <input
             type="search"
             placeholder="Search..."
-<<<<<<< HEAD
             className="border border-gray-300 rounded-md p-1 pl-8 w-[280px] bg-[#EDEDED] focus:outline-none focus:border-[#22C55E] focus:border-2"
-=======
-            className="border border-gray-300 rounded-md p-1 pl-8 bg-[#EDEDED]"
->>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
           />
           <img
             src={search}
@@ -64,12 +56,16 @@ const Navbar = () => {
             className="w-5 h-5 absolute left-2 top-1/2 transform -translate-y-1/2 pointer-events-none"
           />
         </div>
+
+        {/* Icons & Dropdown */}
         <div className="flex items-center gap-4 ml-4">
           <span>
-<<<<<<< HEAD
             <DropdownMenu />
           </span>
-          <span className="mr-2">
+          <span>
+            <HomeOutlined />
+          </span>
+          <span>
             <UserOutlined />
           </span>
           <Dropdown menu={{ items, onClick: handleMenuClick }}>
@@ -80,19 +76,11 @@ const Navbar = () => {
               </Space>
             </a>
           </Dropdown>
-=======
-            <HomeOutlined />
-          </span>
-          <span>
-            <UserOutlined />
-          </span>
-          <select className="">
-            <option value="1">English</option>
-            <option value="2">Russian 2</option>
-            <option value="3">Uzbek 3</option>
-          </select>
->>>>>>> 3dd9b8ada609a43596c5bf60c9bee0ccd6fdeb84
-          <img src={profile} alt="Profile Icon" className="w-[39x] h-[39px]" />
+          <img
+            src={profile}
+            alt="Profile Icon"
+            className="w-[39px] h-[39px] rounded-full"
+          />
         </div>
       </div>
     </div>
