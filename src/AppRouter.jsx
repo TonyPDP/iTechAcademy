@@ -21,7 +21,7 @@ import AuthLayout from "./pages/auth/Layout/Layout";
 import LoginForm from "./pages/auth/Login/Login";
 import SignupForm from "./pages/auth/SignUp/SignUp";
 import ForgotPasswordForm from "./pages/auth/ForgotPassword/ForgotPassword";
-import StudentEdit from "./pages/Student/Allstudents";
+import Attendance from "./pages/Groups/Mirzohid/Attendance";
 
 const AppRoutes = () => {
   const [user, setUser] = useState(null);
@@ -136,10 +136,10 @@ const AppRoutes = () => {
             }
           />
           <Route
-            path="/students/StudentEdit/:studentId"
+            path="/groups/attendance"
             element={
               <LayoutWithSidebar>
-                <StudentEdit />
+                <Attendance />
               </LayoutWithSidebar>
             }
           />

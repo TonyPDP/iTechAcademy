@@ -1,37 +1,40 @@
-import { useState } from 'react';
-import { Form, Input, Button, Alert, Divider } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone, GoogleOutlined } from '@ant-design/icons';
-import { registerUser } from '../../../utils/auth';
+import { useState } from "react";
+import { Form, Input, Button, Alert, Divider } from "antd";
+import {
+  EyeInvisibleOutlined,
+  EyeTwoTone,
+  GoogleOutlined,
+} from "@ant-design/icons";
+import { registerUser } from "../../../utils/auth";
+import { useNavigate } from "react-router-dom";
 
-const SignupForm = ({ onSwitchToLogin, onSignupSuccess }) => {
+const SignupForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
+  const navigate = useNavigate(); // ✅ navigate hook
 
   const handleSubmit = async (values) => {
     setLoading(true);
-    setError('');
+    setError("");
 
     try {
       const result = registerUser(values.name, values.email, values.password);
-      
+
       if (result.success) {
-        if (onSignupSuccess) {
-          onSignupSuccess();
-        }
+        navigate("/login"); // ✅ Successful signup → go to login page
       } else {
         setError(result.message);
       }
     } catch (err) {
-      setError('An unexpected error occurred');
+      setError("An unexpected error occurred");
     } finally {
       setLoading(false);
     }
   };
 
   const handleGoogleSignUp = () => {
-    // Placeholder for Google authentication
-    alert('Google Sign Up would be implemented here');
+    alert("Google Sign Up would be implemented here");
   };
 
   return (
@@ -47,7 +50,7 @@ const SignupForm = ({ onSwitchToLogin, onSignupSuccess }) => {
           type="error"
           className="mb-4"
           closable
-          onClose={() => setError('')}
+          onClose={() => setError("")}
         />
       )}
 
@@ -61,42 +64,38 @@ const SignupForm = ({ onSwitchToLogin, onSignupSuccess }) => {
           label="Name"
           name="name"
           rules={[
-            { required: true, message: 'Please input your name!' },
-            { min: 2, message: 'Name must be at least 2 characters!' }
+            { required: true, message: "Please input your name!" },
+            { min: 2, message: "Name must be at least 2 characters!" },
           ]}
         >
-          <Input
-            placeholder="John Doe"
-            className="h-12 text-base"
-          />
+          <Input placeholder="John Doe" className="h-12 text-base" />
         </Form.Item>
 
         <Form.Item
           label="Email"
           name="email"
           rules={[
-            { required: true, message: 'Please input your email!' },
-            { type: 'email', message: 'Please enter a valid email!' }
+            { required: true, message: "Please input your email!" },
+            { type: "email", message: "Please enter a valid email!" },
           ]}
         >
-          <Input
-            placeholder="Johndoe@gmail.com"
-            className="h-12 text-base"
-          />
+          <Input placeholder="johndoe@gmail.com" className="h-12 text-base" />
         </Form.Item>
 
         <Form.Item
           label="Password"
           name="password"
           rules={[
-            { required: true, message: 'Please input your password!' },
-            { min: 8, message: 'Must be a least 8 characters long.' }
+            { required: true, message: "Please input your password!" },
+            { min: 8, message: "Password must be at least 8 characters long." },
           ]}
         >
           <Input.Password
             placeholder="••••••••••"
             className="h-12 text-base"
-            iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
           />
         </Form.Item>
 
@@ -125,7 +124,7 @@ const SignupForm = ({ onSwitchToLogin, onSignupSuccess }) => {
           <span className="text-gray-600">Already have an account? </span>
           <button
             type="button"
-            onClick={onSwitchToLogin}
+            onClick={() => navigate("/login")} // ✅ Login sahifasiga o‘tish
             className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
             Log in

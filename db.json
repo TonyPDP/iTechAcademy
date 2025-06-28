@@ -1,26 +1,6 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Abdujabbor Ibrohimov",
-      "phone": "+998 94 412 70 70",
-      "course": "Frontend 05",
-      "email": "abdujabbor.ibrohimov@gmail.com",
-      "country": "Uzbekistan",
-      "city": "Tashkent",
-      "address": "Amir Temur Street 101",
-      "zip": "100100",
-      "invoiceId": "#00123045",
-      "payType": "Card",
-      "payReason": "Course Payment",
-      "payDate": "2025-06-20",
-      "icon": "mastercard_icon.svg",
-      "pay": "**** 4567",
-      "price": "$850.00",
-      "status": "Settled",
-      "avatar": "https://i.pravatar.cc/40?img=1"
-    },
-    {
       "id": "2",
       "name": "Gulnora Rasulova",
       "phone": "+998 94 412 90 65",
