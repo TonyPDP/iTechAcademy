@@ -1,6 +1,6 @@
 import search from "../../../public/search.png";
 import profile from "../../../public/profile.png";
-import { UserOutlined } from "@ant-design/icons";
+import { BellOutlined } from "@ant-design/icons";
 import DropdownMenu from "./DropdownMenu";
 import { Dropdown, Space } from "antd";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
@@ -56,7 +56,7 @@ const Navbar = () => {
             <DropdownMenu />
           </span>
           <span className="mr-2">
-            <UserOutlined />
+            <BellOutlined />
           </span>
           <Dropdown menu={{ items, onClick: handleMenuClick }}>
             <a onClick={(e) => e.preventDefault()}>
